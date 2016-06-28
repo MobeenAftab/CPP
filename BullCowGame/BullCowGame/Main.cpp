@@ -12,20 +12,21 @@
 using namespace std;	//Using this method prevents us from writing 'std::' for every function
 						//Warning: this can create a namespace clash if libraries share same function name
 
+//Normally these would be stored in a header file
 void PrintIntro();	//calling the function as a method before main for compile.
 					//otherwise main will not find printintro
-string  GetGuessAndPrint();
+void PlayGame();
+string  GetGuess();
 //The entry point for our application
 int main() {
 	
-	PrintIntro();	//method calling function - will run at this stage of main
-	GetGuessAndPrint();
-	GetGuessAndPrint();
-
-	cout << endl;
-	return 0;
-
+	//method calling function - will run at this stage of main
+	PrintIntro();	
+	PlayGame();
 	
+	cout << endl;
+	return 0;	//end application
+
 }
 
 //intro function that takes in 0 parameters and returns nothing.
@@ -41,14 +42,22 @@ void PrintIntro() {
 	cout << endl;
 	return;
 }
+
+void PlayGame() {
+	//loop for number of turns available
+	constexpr int MAX_TURNS = 5;
+	for (int count = 1;count <= MAX_TURNS;count++) {
+		string Guess= GetGuess();	//take return value from getGuess and input it into local variable Guess
+		cout << "Your Guess " + Guess << endl;
+		cout << endl;
+	}
+}
+
 //Get Player guess from Keyboard
-string GetGuessAndPrint() {
+string GetGuess() {
 	cout << "Enter your Guess: ";
 	string Guess = "";
 	getline(cin, Guess);	//port user input to Guess
-	//return guess
-	cout << "Your Guess " + Guess << endl;
-
 	return Guess;
 }
 
