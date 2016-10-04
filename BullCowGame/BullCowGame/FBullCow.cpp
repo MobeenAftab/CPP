@@ -7,6 +7,8 @@ void FbullCow::Reset()
 	constexpr int32 MAX_TRIES = 8;
 	MyMaxTries = MAX_TRIES;
 
+	const FString HIDDEN_WORD = "planet";
+	myHiddenWord = HIDDEN_WORD;
 	MyCurrentTry = 1;
 
 	return;
@@ -35,4 +37,12 @@ bool FbullCow::IsGameWon() const
 bool FbullCow::CheckGuessValidity(FString)
 {
 	return false;
+}
+//recieve a valid guess, increments turn and return count
+BullCowCount FbullCow::SubmitGuess(FString)
+{
+	MyCurrentTry++;	//incremenet the turn number
+	BullCowCount BullCowCount; //set up a return variable
+
+	return BullCowCount;
 }
