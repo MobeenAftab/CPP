@@ -34,7 +34,7 @@ To compile a programme with multiple source files:
 
 /link = change the name to program1.exe, add an /out linker option.
 
-See more optional C++ building references [here] where you can apply to build, optimize, debug, and analyze your code(https://docs.microsoft.com/en-gb/cpp/build/reference/c-cpp-building-reference).
+See more optional C++ building references [here](https://docs.microsoft.com/en-gb/cpp/build/reference/c-cpp-building-reference) where you can apply to build, optimize, debug, and analyze your code.
 
 Run the output file by typing: `"FILENAME"` Where "FILENAME" is the same name as the compiled output source file.
 
